@@ -3,7 +3,7 @@ import './Button.css';
 
 const STYLES = [
     'btn--primary',
-    'ben--outline',
+    'btn--outline',
 ]
 
 const SIZE = [
