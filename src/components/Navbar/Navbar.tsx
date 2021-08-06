@@ -5,13 +5,9 @@ import './Navbar.css';
 
 export const Navbar = () => {
 
-    // state = {
-    //     clicked: false,
-    // }
     const [clicked, setClicked] = useState(false)
 
     const handleClick = () => {
-        // this.setState({ clicked: !this.state.clicked })
         !clicked ? setClicked(true) : setClicked(false);
     }
 
@@ -36,13 +32,7 @@ export const Navbar = () => {
                     </li>
                 })}
             </ul>
-            <Button
-            // style={{0: 'btn--primary'}}
-            // type='button'
-            // onClick={handleClick}
-
-
-            >Sign Up</Button>
+            <Button>Sign Up</Button>
         </nav>
     );
 
