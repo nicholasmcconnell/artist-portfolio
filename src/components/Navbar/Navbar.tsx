@@ -1,6 +1,5 @@
 import React, { Component, useState } from "react";
-import { render } from "react-dom";
-import { Button } from '../Button/Buttons';
+import { Button } from '../Button/Button';
 import { MenuItems } from "./MenuItems";
 import './Navbar.css';
 
@@ -13,7 +12,7 @@ export const Navbar = () => {
 
     const handleClick = () => {
         // this.setState({ clicked: !this.state.clicked })
-        setClicked(true);
+        !clicked ? setClicked(true) : setClicked(false);
     }
 
     return (
@@ -37,13 +36,13 @@ export const Navbar = () => {
                     </li>
                 })}
             </ul>
-            {/* <Button
+            <Button
+            // style={{0: 'btn--primary'}}
+            // type='button'
+            // onClick={handleClick}
 
-                    type='button'
-                    onClick={ButtonProps.handleClick}
 
-
-                >Sign Up</Button> */}
+            >Sign Up</Button>
         </nav>
     );
 
