@@ -1,11 +1,23 @@
 import React from "react";
-import "./App.css";
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
 import { Navbar } from "./components/Navbar/Navbar";
+import "./App.css";
+import { Form } from "./components/Form/Form";
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
+      <Router>
+        <Navbar />
+        <Switch>
+          <Route exact path='/contact' >
+            <Form />
+          </Route>
+
+        </Switch>
+      </Router>
+
     </div>
   );
 }
