@@ -25,12 +25,11 @@ export const Navbar = () => {
                 {MenuItems.map((item, index) => {
                     return <li key={index}>
                         <Link to={item.url}>
-                            <a
+                            <div
                                 className={item.cName}
-                                href={item.url}
                             >
                                 {item.title}
-                            </a>
+                            </div>
                         </Link>
                     </li>
                 })}
