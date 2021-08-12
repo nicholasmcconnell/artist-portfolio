@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import useForm from 'react-hook-form';
+import React from 'react';
+import { useForm } from '../../utils/useForm';
 
 import './Form.css';
 
@@ -20,13 +20,18 @@ export const Form = () => {
     //     console.log(login)
     // }
 
+    const [state, handleChange] = useForm();
+
+    const handleSubmit = (e: any) => {
+        e.preventDefault();
+    }
+
     return (
-        <form>
-            {/* <input type="text" placeholder='Email' name='email' value={login.email} onChange={handleChange} />
-            <input type='password' placeholder='Password' name='password' value={login.password} onChange={handleChange} /> */}
-            <input type="text" placeholder='Email' name='email' />
-            <input type='password' placeholder='Password' name='password' />
-            <input type="submit" />
+        <form >
+            <input type="text" placeholder='Email' name='email' value={state.email || ''} onChange={handleChange} />
+            <input type='password' placeholder='Password' name='password' value={state.password || ''} onChange={handleChange} />
+            {/* <button style={{ color: 'black', width: "50px", height: '50px' }}>Register</button> */}
+            <input type="submit" onClick={handleSubmit} />
         </form>
 
     )
