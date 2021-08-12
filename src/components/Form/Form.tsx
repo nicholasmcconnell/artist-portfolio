@@ -24,12 +24,26 @@ export const Form = () => {
 
     const handleSubmit = (e: any) => {
         e.preventDefault();
+        console.log(state);
     }
 
     return (
         <form >
-            <input type="text" placeholder='Email' name='email' value={state.email || ''} onChange={handleChange} />
-            <input type='password' placeholder='Password' name='password' value={state.password || ''} onChange={handleChange} />
+            <input
+                type="text"
+                placeholder='Email'
+                name='email'
+                value={state.email || ''}
+                onChange={handleChange}
+            />
+
+            <input
+                type='password'
+                placeholder='Password'
+                name='password'
+                value={state.password || ''}
+                onChange={handleChange}
+            />
             {/* <button style={{ color: 'black', width: "50px", height: '50px' }}>Register</button> */}
             <input type="submit" onClick={handleSubmit} />
         </form>
