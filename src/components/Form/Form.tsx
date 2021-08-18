@@ -26,6 +26,7 @@ export const Form = () => {
     const handleSubmit = (e: any) => {
         //handle email error
         //use validator
+        //hamburger is gone
         e.preventDefault();
         console.log(state);
     }
