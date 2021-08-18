@@ -24,6 +24,8 @@ export const Form = () => {
     const [state, handleChange] = useForm();
 
     const handleSubmit = (e: any) => {
+        //handle email error
+        //use validator
         e.preventDefault();
         console.log(state);
     }
@@ -31,10 +33,13 @@ export const Form = () => {
     return (
         <Container>
 
+            {/* make input components for form with props
+            make error component
+            copy todo form for help */}
             <form >
                 <input
                     className='text'
-                    type="text"
+                    type="email"
                     placeholder='Email'
                     name='email'
                     value={state.email || ''}
@@ -49,7 +54,10 @@ export const Form = () => {
                     value={state.password || ''}
                     onChange={handleChange}
                 />
-                <input type="submit" onClick={handleSubmit} />
+                <input
+                    className='submit'
+                    type="submit"
+                    onClick={handleSubmit} />
 
                 {/* <button type="submit" onClick={handleSubmit} >Submit</button> */}
             </form>

@@ -9,9 +9,23 @@ form {
   align-items: center;
 }
 
+input {
+  border-radius: 5px;
+}
+
 input.text {
   width: 100%;
   height: 30px;
   /* margin-top: 5px; */
   margin-bottom: 10px;
+}
+
+input:hover {
+  border-color: rgb(191, 195, 199);
+  border-width: 1px;
+}
+
+input.submit {
+  height: 30px;
+  padding: 5px;
 }
