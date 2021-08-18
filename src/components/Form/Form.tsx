@@ -1,5 +1,6 @@
 import React from 'react';
 import { useForm } from '../../utils/useForm';
+import { Container } from '../Container/Container';
 
 import './Form.css';
 
@@ -28,25 +29,31 @@ export const Form = () => {
     }
 
     return (
-        <form >
-            <input
-                type="text"
-                placeholder='Email'
-                name='email'
-                value={state.email || ''}
-                onChange={handleChange}
-            />
+        <Container>
 
-            <input
-                type='password'
-                placeholder='Password'
-                name='password'
-                value={state.password || ''}
-                onChange={handleChange}
-            />
-            {/* <button style={{ color: 'black', width: "50px", height: '50px' }}>Register</button> */}
-            <input type="submit" onClick={handleSubmit} />
-        </form>
+            <form >
+                <input
+                    className='text'
+                    type="text"
+                    placeholder='Email'
+                    name='email'
+                    value={state.email || ''}
+                    onChange={handleChange}
+                />
+
+                <input
+                    className='text'
+                    type='password'
+                    placeholder='Password'
+                    name='password'
+                    value={state.password || ''}
+                    onChange={handleChange}
+                />
+                <input type="submit" onClick={handleSubmit} />
+
+                {/* <button type="submit" onClick={handleSubmit} >Submit</button> */}
+            </form>
+        </Container>
 
     )
 }

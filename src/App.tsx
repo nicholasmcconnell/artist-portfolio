@@ -4,23 +4,22 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Navbar } from "./components/Navbar/Navbar";
 import "./App.css";
 import { Form } from "./components/Form/Form";
-// import Container from "./components/Container1/Container";
-
+import { Container } from './components/Container/Container'
 function App() {
   return (
     <div className="App">
       <Router>
         <Navbar />
 
-        {/* <Container> */}
 
         <Switch>
           <Route exact path='/contact' >
+            {/* <Container> */}
             <Form />
+            {/* </Container> */}
           </Route>
 
         </Switch>
-        {/* </Container> */}
       </Router>
 
     </div>
