@@ -4,6 +4,8 @@ export const useForm = () => {
 
     const [state, setState] = useState<any>({});
 
+    const [errors, setErrors] = useState<any>({});
+
     // interface stateTypes {
     //     [key: string]: any
     // }
@@ -13,6 +15,11 @@ export const useForm = () => {
         setState(({ ...state, [e.target.name]: e.target.value }));
 
     }
-    return [state, handleChange];
+
+    const handleSubmit = (e: any) => {
+        e.preventDefault();
+    }
+
+    return [state, handleChange, handleSubmit];
 
 }
