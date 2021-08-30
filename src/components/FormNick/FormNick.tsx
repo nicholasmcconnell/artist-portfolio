@@ -21,14 +21,14 @@ export const Form = () => {
     //     console.log(login)
     // }
 
-    const [state, handleChange] = useForm();
+    // const [state, handleChange] = useForm();
 
     const handleSubmit = (e: any) => {
         //handle email error
         //use validator
         //hamburger is gone
         e.preventDefault();
-        console.log(state);
+        // console.log(state);
     }
 
     return (
@@ -43,8 +43,8 @@ export const Form = () => {
                     type="email"
                     placeholder='Email'
                     name='email'
-                    value={state.email || ''}
-                    onChange={handleChange}
+                // value={state.email || ''}
+                // onChange={handleChange}
                 />
 
                 <input
@@ -52,8 +52,8 @@ export const Form = () => {
                     type='password'
                     placeholder='Password'
                     name='password'
-                    value={state.password || ''}
-                    onChange={handleChange}
+                // value={state.password || ''}
+                // onChange={handleChange}
                 />
                 <input
                     className='submit'

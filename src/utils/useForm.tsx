@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export const useForm = () => {
+export const useForm = (validate: any) => {
 
     const [state, setState] = useState<any>({});
 
@@ -18,8 +18,9 @@ export const useForm = () => {
 
     const handleSubmit = (e: any) => {
         e.preventDefault();
+        setErrors(validate(state))
     }
 
-    return [state, handleChange, handleSubmit];
+    return [state, handleChange, handleSubmit, errors];
 
 }
