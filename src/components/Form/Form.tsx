@@ -11,7 +11,6 @@ export const Form = () => {
     const submitForm = () => {
         setIsSubmitted(true);
     }
-    console.log(typeof submitForm)
     return (
         <>
             <div className="form-container">
@@ -20,7 +19,7 @@ export const Form = () => {
                     <img src="img/img-2.svg" alt="spaceship" className="form-img" />
                 </div>
                 {!isSubmitted ?
-                    <FormSignup submitForm={() => submitForm()} />
+                    <FormSignup submitForm={submitForm} />
                     :
 
                     <FormSuccess />
