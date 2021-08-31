@@ -3,9 +3,16 @@ import { useForm } from '../../utils/useForm';
 import validate from './validationInfo';
 import './Form.css';
 
-const FormSignup = (submitForm: any) => {
+interface UseFormProps {
+    submitForm: () => void;
+}
 
-    const [state, handleChange, handleSubmit, errors] = useForm(submitForm, validate);
+
+const FormSignup: React.FC<UseFormProps> = (props) => {
+
+    const { submitForm } = props;
+
+    const { state, handleChange, handleSubmit, errors } = useForm(submitForm, validate);
     return (
         <div className="form-content-right">
             <form className="form" onSubmit={handleSubmit} >
@@ -36,7 +43,7 @@ const FormSignup = (submitForm: any) => {
                     </label>
                     <input
                         id='email'
-                        type="email"
+                        type="text"
                         name="email"
                         className="form-input"
                         placeholder='Enter your email'

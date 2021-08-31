@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-export const useForm = (submitForm: any, validate: any) => {
+export const useForm = (callback: any, validate: any) => {
 
     const [state, setState] = useState<any>({});
     const [errors, setErrors] = useState<any>({});
@@ -21,6 +21,16 @@ export const useForm = (submitForm: any, validate: any) => {
         setIsSubmitting(true);
     }
 
-    return [state, handleChange, handleSubmit, errors];
+    useEffect(
+        () => {
+            if (Object.keys(errors).length === 0 && isSubmitting) {
+                callback();
+            }
+        },
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        [errors]
+    );
+
+    return { state, handleChange, handleSubmit, errors };
 
 }
