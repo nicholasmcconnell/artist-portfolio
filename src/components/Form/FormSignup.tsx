@@ -16,7 +16,10 @@ const FormSignup: React.FC<UseFormProps> = (props) => {
     return (
         <div className="form-content-right">
             <form className="form" onSubmit={handleSubmit} >
-                <h1>Get started with us today!  Create your account by filling out the information below</h1>
+                <div className="form-greeting">
+                    <h1 className='form-greeting-message'>Get started with us today!</h1>
+                    <h1 className='form-greeting-message'>Create your account by filling out the information below.</h1>
+                </div>
                 <div className="form-inputs">
                     <label
                         htmlFor="username" className="form-label">

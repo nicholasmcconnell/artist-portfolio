@@ -15,9 +15,9 @@ export const Form = () => {
         <>
             <div className="form-container">
                 <span className="close-btn">x</span>
-                <div className="form-content-left">
+                {/* <div className="form-content-left">
                     <img src="img/img-2.svg" alt="spaceship" className="form-img" />
-                </div>
+                </div> */}
                 {!isSubmitted ?
                     <FormSignup submitForm={submitForm} />
                     :
