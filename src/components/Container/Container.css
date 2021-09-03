@@ -1,0 +1,9 @@
+.container {
+  background-color: green;
+  width: 60%;
+  padding: 10px;
+  height: auto;
+  position: relative;
+  left: 20%;
+  top: 15vh;
+}
