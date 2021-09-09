@@ -1,7 +1,14 @@
 import React from 'react'
+
+import Form from './FormBody/FormBody';
 import { useForm } from '../../utils/useForm';
 import validate from './validationInfo';
+
+
 import './Form.css';
+import Label from './Label/Label';
+import Input from './Input/Input';
+import Button from './Button/Button';
 
 interface UseFormProps {
     submitForm: () => void;
@@ -11,12 +18,30 @@ interface UseFormProps {
 const FormSignup: React.FC<UseFormProps> = (props) => {
 
     const { submitForm } = props;
-
     const { state, handleChange, handleSubmit, errors } = useForm(submitForm, validate);
     return (
         <div className="form-content-right">
-            <form className="form" onSubmit={handleSubmit} >
-                <div className="form-greeting">
+            <Form >
+                <Label htmlFor='username'>Username</Label>
+                <Input
+                    id='username'
+                    type="text"
+                    name="username"
+                    className="form-input"
+                    placeholder='Enter your username'
+                    value={state.username}
+                    onChange={handleChange}
+                />
+
+                <Button
+                    className='form-input-btn'
+                    type='submit'
+                    onClick={handleSubmit}
+                >
+                    Sign Up
+                </Button>
+
+                {/* <div className="form-greeting">
                     <h1 className='form-greeting-message'>Get started with us today!</h1>
                     <h1 className='form-greeting-message'>Create your account by filling out the information below.</h1>
                 </div>
@@ -102,8 +127,8 @@ const FormSignup: React.FC<UseFormProps> = (props) => {
                 </button>
                 <span className="form-input-login">
                     Already have an account? Login <a href='#'>here</a>
-                </span>
-            </form>
+                </span> */}
+            </Form>
         </div>
     )
 }
