@@ -3,16 +3,16 @@ import { Children } from 'react'
 
 interface LabelProps {
     htmlFor: string,
-    children: string
+    children: string,
+    className: string
 
 }
 
 
-const Label: React.FC<LabelProps> = (props) => {
-    const { htmlFor, children } = props;
+const Label: React.FC<LabelProps> = ({ htmlFor, children, className }) => {
     return (
         <label
-            htmlFor={htmlFor} className="form-label">
+            htmlFor={htmlFor} className={className}>
             {children}
         </label>
     )
