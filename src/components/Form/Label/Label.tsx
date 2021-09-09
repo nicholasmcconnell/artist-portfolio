@@ -1,5 +1,6 @@
-import React from 'react'
-import { Children } from 'react'
+import React from 'react';
+
+import './Label.css';
 
 interface LabelProps {
     htmlFor: string,
@@ -7,7 +8,6 @@ interface LabelProps {
     className: string
 
 }
-
 
 const Label: React.FC<LabelProps> = ({ htmlFor, children, className }) => {
     return (

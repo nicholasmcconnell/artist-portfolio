@@ -1,5 +1,7 @@
 import React from 'react'
 
+import './FormBody.css'
+
 interface FormProps {
     children: any,
     // handleSubmit: () => void;
