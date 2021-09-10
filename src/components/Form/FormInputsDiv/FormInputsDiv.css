@@ -1,6 +1,7 @@
 .form-inputs {
   margin-bottom: 0.5rem;
-  width: 80%;
+  width: 90%;
+  align-content: center;
 }
 
 .form-inputs p {

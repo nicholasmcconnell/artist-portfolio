@@ -4,11 +4,12 @@ import './FormInputsDiv.css'
 
 interface FormInputsDivProps {
     children: any
+    className: string
 }
 
-const FormInputsDiv: React.FC<FormInputsDivProps> = ({ children }) => {
+const FormInputsDiv: React.FC<FormInputsDivProps> = ({ children, className }) => {
     return (
-        <div>
+        <div className={className}>
             {children}
         </div>
     )

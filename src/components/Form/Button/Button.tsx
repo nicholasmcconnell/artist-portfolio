@@ -4,7 +4,7 @@ import './Button.css';
 
 interface ButtonProps {
     className?: any,
-    type: any,
+    type?: any,
     onClick: (e: any) => void
     // children: any
 }
@@ -12,13 +12,13 @@ interface ButtonProps {
 const Button: React.FC<ButtonProps> = (props) => {
     const { className, type, onClick, children } = props;
     return (
-        <button
+        <div
             className={className}
-            type={type}
+            // type={type}
             onClick={onClick}
         >
             {children}
-        </button>
+        </div>
     )
 }
 

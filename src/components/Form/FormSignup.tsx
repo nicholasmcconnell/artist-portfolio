@@ -4,7 +4,6 @@ import Form from './FormBody/FormBody';
 import { useForm } from '../../utils/useForm';
 import validate from './validationInfo';
 
-
 import Label from './Label/Label';
 import Input from './Input/Input';
 import Button from './Button/Button';
@@ -23,11 +22,11 @@ const FormSignup: React.FC<UseFormProps> = ({ submitForm }) => {
         // <div className="form-content-right">
         <>
             <Form>
-                <div className="form-greeting">
+                {/* <div className="form-greeting">
                     <h1 className='form-greeting-message'>Get started with us today!</h1>
                     <h1 className='form-greeting-message'>Create your account by filling out the information below.</h1>
-                </div>
-                <FormInputsDiv>
+                </div> */}
+                <FormInputsDiv className='form-inputs'>
                     <Label
                         htmlFor='username'
                         className="form-label"
@@ -46,7 +45,7 @@ const FormSignup: React.FC<UseFormProps> = ({ submitForm }) => {
                     {errors.username && <p>{errors.username}</p>}
                 </FormInputsDiv>
 
-                <FormInputsDiv>
+                <FormInputsDiv className='form-inputs'>
                     <Label
                         htmlFor="email"
                         className="form-label"
@@ -65,7 +64,7 @@ const FormSignup: React.FC<UseFormProps> = ({ submitForm }) => {
                     {errors.email && <p>{errors.email}</p>}
                 </FormInputsDiv>
 
-                <FormInputsDiv>
+                <FormInputsDiv className='form-inputs'>
                     <Label
                         htmlFor="password"
                         className="form-label"
@@ -84,7 +83,7 @@ const FormSignup: React.FC<UseFormProps> = ({ submitForm }) => {
                     {errors.password && <p>{errors.password}</p>}
                 </FormInputsDiv>
 
-                <FormInputsDiv>
+                <FormInputsDiv className='form-inputs'>
                     <Label
                         htmlFor="password2"
                         className="form-label"
