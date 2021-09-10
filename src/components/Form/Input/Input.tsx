@@ -13,8 +13,6 @@ interface InputProps {
 }
 const Input: React.FC<InputProps> = ({ id, type, name, className, placeholder, value, onChange }) => {
 
-    // const { id, type, name, className, placeholder, value, onChange } = props;
-
     return (
         <>
             <input

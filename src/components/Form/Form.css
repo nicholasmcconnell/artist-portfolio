@@ -20,7 +20,7 @@
   cursor: pointer;
 } */
 
-.form-content-left {
+/* .form-content-left {
   background: linear-gradient(
     90deg,
     rgb(39, 176, 255) 0%,
@@ -37,7 +37,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
+} */
 
 /* .form-img-2 {
   width: 60%;
@@ -156,7 +156,7 @@
   transition: all 0.4s ease-out;
 } */
 
-.form-input-login {
+/* .form-input-login {
   font-size: 0.8rem;
   margin-top: 10px;
   color: #fff;
@@ -168,4 +168,4 @@
   text-decoration: none;
   color: #27cdff;
   font-weight: 600;
-}
+} */
