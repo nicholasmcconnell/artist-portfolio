@@ -34,7 +34,10 @@ export const Navbar = () => {
                     </li>
                 })}
             </ul>
-            <Button>Sign Up</Button>
+            <Link to='/signup'>
+                <Button>Sign Up</Button>
+            </Link>
+
         </nav>
     );
 
