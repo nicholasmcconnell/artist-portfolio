@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import { Interface } from 'readline';
+import React from 'react';
 import './Button.css';
 
 const STYLES = [
@@ -14,6 +13,7 @@ const SIZE = [
 
 interface ButtonProps {
     children?: string,
+    className?: any,
     type?: any,
     onClick?: any,
     buttonStyle?: any,

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import Form from '../FormBody/FormBody';
 import { useForm } from '../../../utils/useForm';
-import validate from '../../../utils/validationInfo';
+import validate from '../../../utils/validationSignup';
 
 import Label from '../Label/Label';
 import Input from '../Input/Input';
@@ -24,6 +24,7 @@ const FormSignup = () => {
     const [isSubmitted, setIsSubmitted] = useState(false);
 
     const submitForm = () => {
+        console.log('TO BACK END', state)
         setIsSubmitted(true);
     }
 
@@ -32,11 +33,10 @@ const FormSignup = () => {
         <>
             {!isSubmitted ?
                 <FormContainer>
-                    <Form>
-                        <FormInputsDiv className='form-inputs'>
+                    <Form greeting1={'Get started with us today!'} greeting2={'Create your account by filling out the information below.'}>
+                        <FormInputsDiv>
                             <Label
                                 htmlFor='username'
-                                className="form-label"
                             >
                                 Username
                             </Label>
@@ -44,7 +44,6 @@ const FormSignup = () => {
                                 id='username'
                                 type="text"
                                 name="username"
-                                className="form-input"
                                 placeholder='Enter your username'
                                 value={state.username}
                                 onChange={handleChange}
@@ -55,7 +54,6 @@ const FormSignup = () => {
                         <FormInputsDiv className='form-inputs'>
                             <Label
                                 htmlFor="email"
-                                className="form-label"
                             >
                                 Email
                             </Label>
@@ -63,7 +61,6 @@ const FormSignup = () => {
                                 id='email'
                                 type="text"
                                 name="email"
-                                className="form-input"
                                 placeholder='Enter your email'
                                 value={state.email || ''}
                                 onChange={handleChange}
@@ -74,7 +71,6 @@ const FormSignup = () => {
                         <FormInputsDiv className='form-inputs'>
                             <Label
                                 htmlFor="password"
-                                className="form-label"
                             >
                                 Password
                             </Label>
@@ -82,7 +78,6 @@ const FormSignup = () => {
                                 id='password'
                                 type="password"
                                 name="password"
-                                className="form-input"
                                 placeholder='Enter your password'
                                 value={state.password || ''}
                                 onChange={handleChange}
@@ -93,7 +88,6 @@ const FormSignup = () => {
                         <FormInputsDiv className='form-inputs'>
                             <Label
                                 htmlFor="password2"
-                                className="form-label"
                             >
                                 Confirm Password
 
@@ -102,7 +96,6 @@ const FormSignup = () => {
                                 id='password2'
                                 type="password"
                                 name="password2"
-                                className="form-input"
                                 placeholder='Re-enter your password'
                                 value={state.password2 || ''}
                                 onChange={handleChange}
@@ -111,14 +104,13 @@ const FormSignup = () => {
                         </FormInputsDiv>
 
                         <Button
-                            className='form-input-btn'
                             onClick={handleSubmit}
                         >
                             Sign Up
                         </Button>
 
                         <span className="form-input-login">
-                            Already have an account? Login <Link to='/'><a href='#'>here</a></Link>
+                            Already have an account? Login <Link to='/login'>here</Link>
                         </span>
                     </Form>
                 </FormContainer>

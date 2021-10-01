@@ -4,7 +4,7 @@ import './Button.css';
 
 interface ButtonProps {
     className?: any,
-    onClick: (e: any) => void
+    onClick?: (e: any) => void
     // children: any
 }
 
@@ -12,7 +12,7 @@ const Button: React.FC<ButtonProps> = (props) => {
     const { className, onClick, children } = props;
     return (
         <div
-            className={className}
+            className={'form-input-btn'}
             onClick={onClick}
         >
             {children}

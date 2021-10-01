@@ -5,7 +5,7 @@
     rgba(73, 63, 252, 1) 100%
   );
 
-  /* background-color: aqua; */
+  background-color: aqua;
   height: 80px;
   display: flex;
   justify-content: center;

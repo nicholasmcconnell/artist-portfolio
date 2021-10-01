@@ -6,7 +6,7 @@ interface InputProps {
     id: any,
     type: string,
     name: string,
-    className: string,
+    className?: string,
     placeholder: string,
     value: string,
     onChange: any
@@ -19,7 +19,7 @@ const Input: React.FC<InputProps> = ({ id, type, name, className, placeholder, v
                 id={id}
                 type={type}
                 name={name}
-                className={className}
+                className={'form-input'}
                 placeholder={placeholder}
                 value={value || ''}
                 onChange={onChange}

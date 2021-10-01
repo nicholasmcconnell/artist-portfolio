@@ -29,6 +29,7 @@ export const useForm = (callback: any, validate: any) => {
     useEffect(
         () => {
             if (Object.keys(errors).length === 0 && isSubmitting) {
+                console.log('11111111111111111')
                 callback();
             }
         },
