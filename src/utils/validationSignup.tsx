@@ -1,4 +1,4 @@
-export default function validateInfo(values: any) {
+export default function validateSignup(values: any) {
     let errors: any = {};
 
     if (!values.username) {

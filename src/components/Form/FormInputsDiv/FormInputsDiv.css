@@ -1,0 +1,11 @@
+.form-inputs {
+  margin-bottom: 0.5rem;
+  width: 90%;
+  align-content: center;
+}
+
+.form-inputs p {
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  color: #f00e0e;
+}

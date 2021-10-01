@@ -3,26 +3,25 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import { Navbar } from "./components/Navbar/Navbar";
 import "./App.css";
-// import { Form } from "./components/FormNick/FormNick";
-import { Container } from './components/Container/Container'
-import { Form } from "./components/Form/Form";
+// import { Form } from "./components/Form/Form";
+import FormSignup from "./components/Form/FormSignup/FormSignup";
+import FormLogin from "./components/Form/FormLogin/FormLogin";
 function App() {
   return (
     <div className="App">
       <Router>
         <Navbar />
-
-
         <Switch>
           <Route exact path='/contact' >
-            {/* <Container> */}
-            <Form />
-            {/* </Container> */}
           </Route>
-
+          <Route exact path='/signup' >
+            <FormSignup />
+          </Route>
+          <Route exact path='/login' >
+            <FormLogin />
+          </Route>
         </Switch>
       </Router>
-
     </div>
   );
 }
