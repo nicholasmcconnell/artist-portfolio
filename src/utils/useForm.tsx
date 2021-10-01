@@ -23,6 +23,7 @@ export const useForm = (callback: any, validate: any) => {
         e.preventDefault();
         console.log(state)
         setErrors(validate(state))
+        //not sure I need this piece of state
         setIsSubmitting(true);
     }
 
