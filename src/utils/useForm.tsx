@@ -2,20 +2,13 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 
 import validateSignup from './validationSignup';
+import validateLogin from './validationLogin';
 
-export const useForm = (callback: any, validate: any) => {
+export const useForm = (submitForm: any) => {
 
     const [state, setState] = useState<any>({});
     const [errors, setErrors] = useState<any>({});
     const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
-
-    // interface FormElements extends HTMLFormControlsCollection {
-    //     username: HTMLInputElement
-    // }
-
-    // interface Input extends HTMLFormElement {
-    //     readonly elements: FormElements
-    // }
 
     const handleChange = (e: any) => {
         setState(({ ...state, [e.target.name]: e.target.value }));
@@ -25,22 +18,17 @@ export const useForm = (callback: any, validate: any) => {
         e.preventDefault();
         const id = e.target.id;
         if (id === 'signup') {
-            console.log(state)
-            console.log(e.target.id);
             setErrors(validateSignup(state));
         } else if (id === 'login') {
-            console.log(state)
-            console.log(e.target.id);
+            setErrors(validateLogin(state));
         }
-        //not sure I need this piece of state
         setIsSubmitting(true);
     }
 
     useEffect(
         () => {
             if (Object.keys(errors).length === 0 && isSubmitting) {
-                console.log('11111111111111111')
-                callback();
+                submitForm();
             }
         },
         // eslint-disable-next-line react-hooks/exhaustive-deps

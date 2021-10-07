@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 
 import Form from '../FormBody/FormBody';
 import { useForm } from '../../../utils/useForm';
-import validate from '../../../utils/validationSignup';
 
 import Label from '../Label/Label';
 import Input from '../Input/Input';
@@ -28,7 +27,7 @@ const FormSignup = () => {
         setIsSubmitted(true);
     }
 
-    const { state, handleChange, handleSubmit, errors } = useForm(submitForm, validate);
+    const { state, handleChange, handleSubmit, errors } = useForm(submitForm);
     return (
         <>
             {!isSubmitted ?
@@ -48,7 +47,7 @@ const FormSignup = () => {
                                 value={state.username}
                                 onChange={handleChange}
                             />
-                            {errors.username && <p>{errors.username}</p>}
+                            {errors.username ? <p>{errors.username}</p> : undefined}
                         </FormInputsDiv>
 
                         <FormInputsDiv className='form-inputs'>
@@ -65,7 +64,7 @@ const FormSignup = () => {
                                 value={state.email || ''}
                                 onChange={handleChange}
                             />
-                            {errors.email && <p>{errors.email}</p>}
+                            {errors.email ? <p>{errors.email}</p> : undefined}
                         </FormInputsDiv>
 
                         <FormInputsDiv className='form-inputs'>
@@ -82,7 +81,7 @@ const FormSignup = () => {
                                 value={state.password || ''}
                                 onChange={handleChange}
                             />
-                            {errors.password && <p>{errors.password}</p>}
+                            {errors.password ? <p>{errors.password}</p> : undefined}
                         </FormInputsDiv>
 
                         <FormInputsDiv className='form-inputs'>
@@ -100,7 +99,7 @@ const FormSignup = () => {
                                 value={state.password2 || ''}
                                 onChange={handleChange}
                             />
-                            {errors.password2 && <p>{errors.password2}</p>}
+                            {errors.password2 ? <p>{errors.password2}</p> : undefined}
                         </FormInputsDiv>
 
                         <Button
