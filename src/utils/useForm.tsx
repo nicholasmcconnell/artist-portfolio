@@ -1,6 +1,8 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 
+import validateSignup from './validationSignup';
+
 export const useForm = (callback: any, validate: any) => {
 
     const [state, setState] = useState<any>({});
@@ -21,8 +23,15 @@ export const useForm = (callback: any, validate: any) => {
 
     const handleSubmit = (e: any) => {
         e.preventDefault();
-        console.log(state)
-        setErrors(validate(state))
+        const id = e.target.id;
+        if (id === 'signup') {
+            console.log(state)
+            console.log(e.target.id);
+            setErrors(validateSignup(state));
+        } else if (id === 'login') {
+            console.log(state)
+            console.log(e.target.id);
+        }
         //not sure I need this piece of state
         setIsSubmitting(true);
     }

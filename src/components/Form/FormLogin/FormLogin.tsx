@@ -5,7 +5,12 @@ import FormInputsDiv from '../FormInputsDiv/FormInputsDiv';
 import Label from '../Label/Label';
 import Input from '../Input/Input';
 import Button from '../Button/Button';
+
 export default function FormLogin() {
+
+    const handleSubmit = () => {
+        console.log()
+    }
     return (
         <>
             <FormContainer>
@@ -42,12 +47,12 @@ export default function FormLogin() {
                         {'errors'}
                     </FormInputsDiv>
 
-                    {/* <Button
-                        onClick={handleSubmit}
+                    <Button
+                        onClick={() => handleSubmit()}
+                        id={'login'}
                     >
                         Login
-                    </Button> */}
-
+                    </Button>
                 </Form>
             </FormContainer>
 

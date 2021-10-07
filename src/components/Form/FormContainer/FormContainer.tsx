@@ -10,7 +10,7 @@ interface FormContainerProps {
 const FormContainer: React.FC<FormContainerProps> = ({ children }) => {
     return (
         <div className="form-container">
-            <span className="close-btn"><Link to='/' className='close-btn'>x</Link></span>
+            <span ><Link to='/' className='close-btn'>x</Link></span>
             {children}
         </div>
     )

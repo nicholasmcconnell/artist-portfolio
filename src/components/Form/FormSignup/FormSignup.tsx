@@ -105,6 +105,7 @@ const FormSignup = () => {
 
                         <Button
                             onClick={handleSubmit}
+                            id={'signup'}
                         >
                             Sign Up
                         </Button>

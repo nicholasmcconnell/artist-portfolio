@@ -27,7 +27,7 @@ export const Button = (props: ButtonProps) => {
 
     return (
 
-        < button
+        <button
             className={`btn ${checkButtonStyle} ${checkButtonSize}`
             }
             onClick={onClick}
