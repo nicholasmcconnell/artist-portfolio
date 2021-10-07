@@ -24,7 +24,7 @@ export const Navbar = () => {
             <ul className={!clicked ? 'nav-menu' : 'nav-menu active'}>
                 {MenuItems.map((item, index) => {
                     return <li key={index}>
-                        <Link to={item.url}>
+                        <Link to={item.url} style={{ textDecoration: 'none' }}>
                             <div
                                 className={item.cName}
                             >
