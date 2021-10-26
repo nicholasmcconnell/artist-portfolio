@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import Form from '../FormBody/FormBody';
 import { useForm } from '../../../utils/useForm';
@@ -12,6 +12,9 @@ import './FormSignup.css';
 import { Link } from 'react-router-dom';
 import FormContainer from '../FormContainer/FormContainer';
 import FormSucces from '../FormSuccess/FormSuccess';
+import { useDispatch, useSelector } from 'react-redux';
+import { RegisterUserState } from '../../../redux/reducer';
+import { registerUser } from '../../../redux/actions';
 
 // interface UseFormProps {
 //     submitForm: () => void;
@@ -20,14 +23,23 @@ import FormSucces from '../FormSuccess/FormSuccess';
 const FormSignup = () => {
 
 
-    const [isSubmitted, setIsSubmitted] = useState(false);
+    const userToRegister = useSelector<RegisterUserState, Object>((state) => state.userToRegister)
+    const dispatch = useDispatch();
 
     const submitForm = () => {
+        dispatch(registerUser(state))
         console.log('TO BACK END', state)
+        console.log('userToRegister', userToRegister)
         setIsSubmitted(true);
     }
 
     const { state, handleChange, handleSubmit, errors } = useForm(submitForm);
+    const [isSubmitted, setIsSubmitted] = useState(false);
+
+    // useEffect(() => {
+    //     console.log('in use effect', userToRegister)
+    // }, [])
+
     return (
         <>
             {!isSubmitted ?
@@ -115,10 +127,10 @@ const FormSignup = () => {
                     </Form>
                 </FormContainer>
                 :
-                <FormSucces />
+                <FormSucces user={userToRegister} />
             }
         </>
     )
 }
 
-export default FormSignup
+export default FormSignup;
